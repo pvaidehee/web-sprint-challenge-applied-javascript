@@ -64,12 +64,12 @@ const images = document.querySelectorAll('img');
 const leftButton = document.querySelector('.left-button');
 const rightButton = document.querySelector('.right-button');
 
-let index = 0;
+let index = 1;
 images[index].style.display = 'block';
 
 leftButton.addEventListener('click', () => {
   images[index].style.display = 'none';
-  if (index === 0) {
+  if (index === 1) {
     index = images.length - 1
   } else {
     index--
@@ -80,7 +80,7 @@ leftButton.addEventListener('click', () => {
 rightButton.addEventListener('click', () => {
   images[index].style.display = 'none';
   if (index === images.length - 1) {
-    index = 0
+    index = 1
   } else {
     index++
   }
