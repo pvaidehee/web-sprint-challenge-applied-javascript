@@ -28,6 +28,7 @@ function Carousel(){
   const caro = document.createElement('div');
   const leftButton = document.createElement('div');
   const rightButton = document.createElement('div');
+  const images = document.createElement('img');
   const mountI = document.createElement('img');
   const compI = document.createElement('img');
   const treesI = document.createElement('img');
@@ -47,6 +48,7 @@ function Carousel(){
 
   caro.appendChild(leftButton);
   caro.appendChild(rightButton);
+  caro.appendChild(images);
   caro.appendChild(mountI);
   caro.appendChild(compI);
   caro.appendChild(treesI);
@@ -55,5 +57,32 @@ function Carousel(){
   return caro;
 }
 
-const caroC = document.querySelector('.carousel-container');
-caroC.appendChild(Carousel());
+ const caroC = document.querySelector('.carousel-container');
+ caroC.append(Carousel());
+
+const images = document.querySelectorAll('img');
+const leftButton = document.querySelector('.left-button');
+const rightButton = document.querySelector('.right-button');
+
+let index = 0;
+images[index].style.display = 'block';
+
+leftButton.addEventListener('click', () => {
+  images[index].style.display = 'none';
+  if (index === 0) {
+    index = images.length - 1
+  } else {
+    index--
+  }
+  images[index].style.display = 'block';
+});
+
+rightButton.addEventListener('click', () => {
+  images[index].style.display = 'none';
+  if (index === images.length - 1) {
+    index = 0
+  } else {
+    index++
+  }
+  images[index].style.display = 'block';
+});
