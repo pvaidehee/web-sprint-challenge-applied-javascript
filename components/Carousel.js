@@ -37,7 +37,7 @@ function Carousel(){
   leftButton.classList.add('left-button');
   rightButton.classList.add('right-button');
 
-  leftButton.textContent = '◀';
+  leftButton.textContent =   '◀';
   rightButton.textContent = '▶';
 
   mountI.src = "https://tk-assets.lambdaschool.com/ba687af4-3a1e-43d7-87b2-f30453264c9d_mountains.jpeg";
